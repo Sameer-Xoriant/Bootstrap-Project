@@ -134,6 +134,22 @@ function profiler()
 {
 	document.getElementById("profile").innerHTML = "Hello " +
 	localStorage.getItem("cuser1");
+	document.getElementById("sam").innerHTML = "<caption>Your Ads...</caption>";
+	for (var i = 0; i < ads.length; i++)
+	{
+		if(ads[i].poster == localStorage.getItem("cuser2"))
+		{
+			document.getElementById("sam").innerHTML +=
+			"<tr><td rowspan='6'><img src='" + ads[i].img +
+			"' height='auto' width='300px'></td>" +
+			"<td style='font-size: 1.1em;'><strong>"+ ads[i].ptitle + "</strong></td></tr><tr><td>" + ads[i].desc +
+			"</td></tr><tr><td>Rs."  + ads[i].price + "</td></tr>" +
+			"</tr><tr><td>"  + ads[i].loc + "</td></tr>" +
+			"<tr><td>Posted by: "  + ads[i].poster + "</td></tr>" +
+			"<tr><td>Posted on: "  + ads[i].posted + "</td></tr>";
+		}
+	
+	}
 }
 function checklog()
 {
